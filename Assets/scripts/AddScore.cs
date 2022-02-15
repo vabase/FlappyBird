@@ -6,6 +6,6 @@ public class AddScore : MonoBehaviour
 {
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        FindObjectOfType<ScoreText>().AddScore(); 
+        FindObjectOfType<ScoreText>().AddScore();
     }
 }
