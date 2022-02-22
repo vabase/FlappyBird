@@ -12,6 +12,7 @@ public class Manager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        Time.timeScale = 1;
         startGameUIComponets = GameObject.FindGameObjectsWithTag("StartGameUIComponets");
         gameOverUIComponets = GameObject.FindGameObjectsWithTag("gameOverUIComponets");
         DisableUICompent(gameOverUIComponets);
@@ -21,16 +22,27 @@ public class Manager : MonoBehaviour
 
     }
 
+    public void DisablestartUI()
+    {
+        DisableUICompent(startGameUIComponets);
+    }
+
     public void GameOver()
     {
         EnableUIComponet(gameOverUIComponets);
+        Time.timeScale = 0;
     }
 
+    public void SnowScore()
+    {
+        score.SetActive(true);
+    }
 
     private void EnableScore(GameObject score)
     {
         score.SetActive(true);
     }
+
 
     private void DisableScore(GameObject score)
     {
